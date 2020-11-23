@@ -1,0 +1,16 @@
+<% if current_user %>
+    <p>こんにちは　<%= link_to current_user.email  , users_show_path %>　</p>
+    <p> <%= link_to "サインアウト", destroy_user_session_path, method: :delete %></p>
+<% else %>
+    <div style="display:flex">
+        <p style="margin-right:5px"> <%= link_to "サインイン", user_session_path %></p>
+        <p> <%= link_to "ユーザ登録", new_user_registration_path %></p>
+    </div>
+<% end %>
+<hr/>
+<h1>HOME PAGE</h1>
+<% if current_user %>    
+  <p> chua den day af </p>
+    <p> <%= link_to "本一覧をみる", books_path %></p>
+<% else %>
+<% end %>
